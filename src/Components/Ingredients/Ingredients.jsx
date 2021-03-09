@@ -52,7 +52,7 @@ const Ingredients = () => {
 
 
     const updateIngredients = () => {
-        selectedIngredients = 
+        // selectedIngredients = 
     }
 
 
@@ -63,7 +63,7 @@ const Ingredients = () => {
             closeMenuOnSelect={true}
             components={animatedComponents}
             options={ingredientsData}
-            onClick={}
+            // onClick={}
             styles={styles}
             isMulti
           />

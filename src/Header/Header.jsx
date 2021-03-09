@@ -67,7 +67,7 @@ const Header = () => {
                     <ul>
                         <li><a href="#discover">Discover</a></li>
                         <li><a>Join</a></li>
-                        <li><a>Login</a></li>
+                        <li><a href="#Login">Login</a></li>
                         <li><a>About</a></li>
                     </ul>
             </StyledNav>
