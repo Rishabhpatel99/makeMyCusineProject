@@ -48,7 +48,7 @@ const Register = () => {
         <StyledFormSection>
           <form class="login-form">
               <div class="input-group">
-                <label>Fullname:</label>
+                <label>Full name:</label>
                 <input type="text"></input>
               </div>
               <div class="input-group">
@@ -65,6 +65,9 @@ const Register = () => {
               </div>
               <div class="input-group">
                 <button type="submit" class="btn">Register</button>
+              </div>
+              <div class="input-group">
+                <a href="/login">Already Have an Account?</a>
               </div>             
           </form>
       </StyledFormSection> 

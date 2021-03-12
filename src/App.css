@@ -14,7 +14,7 @@ h1,h2,h3,span,p{
 }
 
 
-.fill-height-grow{
+.full-height-grow{
   display: flex;
   flex-direction: column;
 }

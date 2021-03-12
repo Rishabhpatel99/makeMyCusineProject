@@ -4,10 +4,9 @@ import styled from 'styled-components';
 const StyledLoginMainSection = styled.section`
     display :flex;
     padding-top : 5vh;
-    padding-bottom : 5vh;
+    padding-bottom : 13vh;
     justify-content: space-between;
     flex-wrap: wrap;  
-    height:100vh;
 `
 const StyledContentSection = styled.section`
     display :flex;
@@ -50,7 +49,7 @@ const Login = () => {
                 <button type="submit" class="btn">Login</button>
               </div>
               <div class="input-group">
-                <a href="#Register">New User/ Register</a>
+                <a href="/join">New User/ Register</a>
               </div>
           </form>
       </StyledFormSection> 

@@ -59,16 +59,16 @@ const StyledNav = styled.nav`
 const Header = () => {
     return (
         <StyledHeader>
-                    <StyledLogo>
+                    <StyledLogo href="/">
                         <img src={logo} alt="logo" />
                         <div>Make My Cuisine</div>
                     </StyledLogo>
                 <StyledNav>
                     <ul>
-                        <li><a href="#discover">Discover</a></li>
-                        <li><a>Join</a></li>
-                        <li><a href="#Login">Login</a></li>
-                        <li><a>About</a></li>
+                        <li><a href="/discover">Discover</a></li>
+                        <li><a  href="/join">Join</a></li>
+                        <li><a href="/Login">Login</a></li>
+                        <li><a href="/about">About</a></li>
                     </ul>
             </StyledNav>
         </StyledHeader>
