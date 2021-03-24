@@ -15,7 +15,7 @@ return(
 					
 					<div className="navbar-header">
 						<a className="navbar-brand" href="index.html">
-							<img src="assets/img/logo.png" className="logo logo-scrolled" alt="" />
+							<img src="assets/img/logommc.png" className="logo logo-scrolled logo-home" alt="" />
 						</a>
 					</div>
                     

@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header'
+
+import Slider from './Components/Home/Slider'
+import Process from './Components/Home/Process'
+import TopRecipe  from './Components/Home/TopRecipe'
+
 import Hero from './Components/Hero/Hero'
 import Discover from './Components/Discover/Discover'
 import Ingredients from './Components/Ingredients/Ingredients'
@@ -25,7 +30,9 @@ function App() {
     <div className="wrapper"> 
       <div className="Loader"></div>
     <Header />
-   
+    <Slider />
+    <Process />
+    <TopRecipe />
     <Footer />
     </div>
   );
