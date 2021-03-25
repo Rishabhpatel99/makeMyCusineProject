@@ -11,7 +11,8 @@ return(
             <div className="row">
                 <div className="col col-md-6 col-sm-8">
                     <div className="content">
-                        <h2>Confused?<br /> Find Awesome Recipe !</h2>
+                        <h3>Confused?</h3>
+                        <h2>Find Awesome Recipe !</h2>
                         <p>Give your ingredients to us and we will give you finest way to utilise them.</p>
                         <form className="banner-form" data-animation="animated fadeInUp">
                             <div className="input-group">

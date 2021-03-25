@@ -6,6 +6,8 @@ import Slider from './Components/Home/Slider'
 import Process from './Components/Home/Process'
 import TopRecipe  from './Components/Home/TopRecipe'
 
+import Data from './data.json'
+
 import Hero from './Components/Hero/Hero'
 import Discover from './Components/Discover/Discover'
 import Ingredients from './Components/Ingredients/Ingredients'
@@ -32,7 +34,7 @@ function App() {
     <Header />
     <Slider />
     <Process />
-    <TopRecipe />
+    <TopRecipe data = {Data}/>
     <Footer />
     </div>
   );
