@@ -37,12 +37,12 @@ function App() {
     <Header />
 
     {/* home page */}
-    {/* <Slider />
+    <Slider />
     <Process />
-    <TopRecipe data = {Data}/> */}
+    <TopRecipe data = {Data}/>
 {/* home page end */}
 
-<RecipeSingle data = {Data1} />
+{/* <RecipeSingle data = {Data1} /> */}
     <Footer />
     </div>
   );

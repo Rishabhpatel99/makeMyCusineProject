@@ -5,9 +5,9 @@ function RecipeSingle(porps){
 
 		const checkSign = (sts)=>{
 		if(sts){
-		return(<i class="fa fa-check usedIngredient"></i>)
+		return(<i className="fa fa-check usedIngredient"></i>)
 		}else{
-		return(<i class="fa fa-times missedIngredient"></i>)
+		return(<i className="fa fa-times missedIngredient"></i>)
 		}
 		}
 
@@ -65,19 +65,20 @@ return(
 	</section>
 	<div className="clearfix"></div>
 
-	{/* job detail */}
+	{/* recipe detail */}
 	<section>
-		<div class="container">
+		<div className="container">
 
-			<div class="col-md-12 col-sm-12">
-				<div class="container-detail-box">
+			<div className="col-md-12 col-sm-12">
+				<div className="container-detail-box">
 
-					<div class="apply-job-header">
+					<div className="apply-job-header">
 						<h4>Recipe</h4>
+						<br />
 						<div className="img-recipe">
 							<img className="img-responsive" src={porps.data[0].image} />
 						</div>
-
+						<br />
 						<p>
 							<div dangerouslySetInnerHTML={{__html: porps.data[0].summary}} />
 						</p>
@@ -85,9 +86,9 @@ return(
 
 
 
-					<div class="apply-job-header">
+					<div className="apply-job-header">
 						<h4>Ingredients</h4>
-
+						<br />
 						
 						{porps.data[0].extendedIngredients.map((item,index)=> {
 							return <Ingredient data={item} index={index}/>
@@ -101,55 +102,13 @@ return(
 
 
 
-					<div class="apply-job-detail">
-						<h5>Skills</h5>
-						<ul class="skills">
-							<li>Css3</li>
-							<li>Html5</li>
-							<li>Photoshop</li>
-							<li>Wordpress</li>
-							<li>PHP</li>
-							<li>Java Script</li>
-						</ul>
-					</div>
+					
 
-					<div class="apply-job-detail">
-						<h5>Requirements</h5>
-						<ul class="job-requirements">
-							<li><span>Availability</span> Hourly</li>
-							<li><span>Education</span> Graduate</li>
-							<li><span>Age</span> 25+</li>
-							<li><span>Experience</span> Intermidiate (3 - 5Year)</li>
-							<li><span>Language</span> English, Hindi</li>
-						</ul>
-					</div>
-
-					<a href="job-detail-1.html#" class="btn btn-success">Apply For This Job</a>
+					<a href="job-detail-1.html#" className="btn btn-success">Save This Recipe</a>
 
 				</div>
 
-				<div class="job-detail-statistic flex-middle-sm">
-
-					<div class="statistic-item flex-middle">
-						<div class="icon text-theme">
-							<i class="ti-headphone theme-cl"></i></div>
-						<span class="text">+91 215 245 6584</span>
-					</div>
-
-					<div class="statistic-item flex-middle">
-						<div class="icon text-theme">
-							<i class="ti-email theme-cl"></i></div>
-						<span class="text">jobstock@gmail.com</span>
-					</div>
-
-					<div class="statistic-item flex-middle">
-						<div class="icon text-theme">
-							<i class="ti-skype theme-cl"></i></div>
-						<span class="text">themezhub</span>
-					</div>
-
-				</div>
-
+				
 			</div>
 
 
