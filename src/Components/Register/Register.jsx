@@ -1,79 +1,62 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
 
-const StyledRegisterMainSection = styled.section`
-    display :flex;
-    padding-top : 5vh;
-    padding-bottom : 5vh;
-    justify-content: space-between; 
-`
-const StyledContentSection = styled.section`
-    display :flex;
-    align-items: center;   
-    justify-content: center;
-    flex-grow: 1;
-    @media(max-width:500px){
-        width:100%
-    }
-    @media(min-width:500px){
-        width:35%
-    }
-`
 
-const StyledFormSection = styled.section`
-    display :flex;
-    align-items: center;   
-    justify-content: center;
-    flex-grow: 1;
-    @media(max-width:500px){
-        width:100%
-    }
-    @media(min-width:500px){
-        width:50%
-    }
-`
+const Register = ()=>{
+    return(
+        <div>
+	<section class="inner-header-title loginImg" >
+				<div class="container">
+					<h1>Register</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
 
-const Register = () => {
 
-  return (
-     <StyledRegisterMainSection id="Register">
-        <StyledContentSection>
-            <div>
-              <h1 class="login-text">You are just <br/>one click <br/>away from <br/>
-              <label class = "accent-text"> 1000+ <br/>RECEPIES.</label>               
-              </h1>
+        <section class="tab-sec gray">
+				<div class="container">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-lg-offset-2 col-md-offset-2">
+						<div class="new-logwrap">
+						
+							<div class="form-group">
+								<label>Name</label>
+								<div class="input-with-icon">
+									<input type="text" class="form-control" placeholder="Enter Your Name" />
+									<i class="theme-cl ti-user"></i>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label>Email</label>
+								<div class="input-with-icon">
+									<input type="email" class="form-control" placeholder="Enter Your Email" />
+									<i class="theme-cl ti-email"></i>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label>Password</label>
+								<div class="input-with-icon">
+									<input type="password" class="form-control" placeholder="Enter Your Password" />
+									<i class="theme-cl ti-lock"></i>
+								</div>
+							</div>
+							
+							<div class="register-account text-center">
+								By hitting the <span class="theme-cl">"Register"</span> button, you agree to the <a class="theme-cl" href="login.html#">Terms conditions</a> and <a class="theme-cl" href="login.html#">Privacy Policy</a>
+							</div>
+							
+							<div class="form-groups">
+								<button type="submit" class="btn btn-primary theme-bg full-width">Register</button>
+							</div>
+							
+						
+						</div>
+					</div>
+				</div>
+			</section>
             </div>
-        </StyledContentSection>
+    );
 
-        <StyledFormSection>
-          <form class="login-form">
-              <div class="input-group">
-                <label>Full name:</label>
-                <input type="text"></input>
-              </div>
-              <div class="input-group">
-                <label>Email:</label>
-                <input type="email"></input>
-              </div>
-              <div class="input-group">
-                <label>Password:</label>
-                <input type="password"></input>
-              </div>
-              <div class="input-group">
-                <label>Confirm Password:</label>
-                <input type="password"></input>
-              </div>
-              <div class="input-group">
-                <button type="submit" class="btn">Register</button>
-              </div>
-              <div class="input-group">
-                <a href="/login">Already Have an Account?</a>
-              </div>             
-          </form>
-      </StyledFormSection> 
-      
-    </StyledRegisterMainSection>
-  );
 }
 
-export default Register;
+export default Register

@@ -1,61 +1,54 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
 
-const StyledLoginMainSection = styled.section`
-    display :flex;
-    padding-top : 5vh;
-    padding-bottom : 13vh;
-    justify-content: space-between;
-    flex-wrap: wrap;  
-`
-const StyledContentSection = styled.section`
-    display :flex;
-    align-items: center;   
-    justify-content: center;
-    flex-grow: 1;
-`
 
-const StyledFormSection = styled.section`
-    display :flex;
-    align-items: center;   
-    justify-content: center;
-    flex-grow: 1;
-`
+const Login = ()=>{
+    return(
+        <div>
+	<section class="inner-header-title loginImg" >
+				<div class="container">
+					<h1>Login</h1>
+				</div>
+			</section>
+			<div class="clearfix"></div>
 
-const Login = () => {
 
-  return (
-     <StyledLoginMainSection id="Login">
-        <StyledContentSection>
-            <div>
-              <h1 class="login-text">Let's 
-              <label class = "accent-text"> COOK</label> 
-              <br/><span> something up</span>
-              </h1>
+        <section class="tab-sec gray">
+				<div class="container">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-lg-offset-2 col-md-offset-2">
+						<div class="new-logwrap">
+						
+							
+							
+							<div class="form-group">
+								<label>Email</label>
+								<div class="input-with-icon">
+									<input type="email" class="form-control" placeholder="Enter Your Email" />
+									<i class="theme-cl ti-email"></i>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label>Password</label>
+								<div class="input-with-icon">
+									<input type="password" class="form-control" placeholder="Enter Your Password" />
+									<i class="theme-cl ti-lock"></i>
+								</div>
+							</div>
+							
+						
+							
+							<div class="form-groups">
+								<button type="submit" class="btn btn-primary theme-bg full-width">Login</button>
+							</div>
+							
+						
+						</div>
+					</div>
+				</div>
+			</section>
             </div>
-        </StyledContentSection>
+    );
 
-        <StyledFormSection>
-          <form class="login-form">
-              <div class="input-group">
-                <label>Email:</label>
-                <input type="email"></input>
-              </div>
-              <div class="input-group">
-                <label>Password:</label>
-                <input type="password"></input>
-              </div>
-              <div class="input-group">
-                <button type="submit" class="btn">Login</button>
-              </div>
-              <div class="input-group">
-                <a href="/join">New User/ Register</a>
-              </div>
-          </form>
-      </StyledFormSection> 
-      
-    </StyledLoginMainSection>
-  );
 }
 
-export default Login;
+export default Login

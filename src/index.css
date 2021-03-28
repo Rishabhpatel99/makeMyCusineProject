@@ -11,3 +11,7 @@
 .usedIngredient{
     color: rgb(6, 167, 6);
 }
+
+.loginImg{
+    background-image:url('../src/assets/img/bn2.jpg');
+}
