@@ -12,6 +12,7 @@ import Data1 from './data1.json'
 
 
 import RecipeSingle from './Components/Recipe/RecipeSingle'
+import RecipeSearch from './Components/Recipe/RecipeSearch'
 import Hero from './Components/Hero/Hero'
 import Discover from './Components/Discover/Discover'
 import Ingredients from './Components/Ingredients/Ingredients'
@@ -34,7 +35,7 @@ function App() {
     // </div>
     <div className="wrapper"> 
       <div className="Loader"></div>
-    <Header />
+      <Header />
 
     {/* home page */}
     {/* <Slider /> */}
@@ -45,7 +46,9 @@ function App() {
 {/* <RecipeSingle data = {Data1} /> */}
 
 
-<Login />
+{/* <Login /> */}
+
+    <RecipeSearch />
 
     <Footer />
     </div>
