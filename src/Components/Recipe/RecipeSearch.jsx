@@ -1,64 +1,83 @@
-// import React from 'react'
-import TopRecipe from '../Home/TopRecipe'
-import Data from '../../data.json'
-import RecipeResult from './RecipeResult'
-// import Select from 'react-select';
-// import 'react-select/dist/css/react-select.css';
+import React, { useState } from "react";
+import RecipeResult from "./RecipeResult";
+import ingredientsData from "../../api/ingredients";
+import { fetchRecipeData } from "../../api/index";
 
-import React, { Component } from 'react'
-import Select from 'react-select'
+import Select from "react-select";
 
-const options = [
-{ value: 'chocolate', label: 'Chocolate' },
-{ value: 'strawberry', label: 'Strawberry' },
-{ value: 'vanilla', label: 'Vanilla' }
-]
 const customStyles = {
-control: base => ({
-...base,
-height: 50
-
-})
+	control: (base) => ({
+		...base,
+		height: 50,
+	}),
 };
 
-const RecipeSearch = ()=>{
+const RecipeSearch = () => {
+	const [ingredients, setingredients] = useState({});
+	const [recipeData, setRecipeData] = useState([]);
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const fetchApiData = async () => {
+			const fetchedRecipeData = await fetchRecipeData(ingredients);
+			setRecipeData(fetchedRecipeData);
+		};
+		fetchApiData();
+	};
 
-return(
-<div>
-	<section class="inner-header-title searchJob">
-		<div class="container">
-			<h1>Search Recipe</h1>
-		</div>
-	</section>
-	<div class="clearfix"></div>
-	<section class="browse-company">
-		<div class="container">
+	const handleChange = (selectedOptions) => {
+		setingredients(selectedOptions);
+	};
 
-			<div class="row extra-mrg">
-				<div class="wrap-search-filter">
-					<form>
-
-						<div class="col-md-10 col-sm-10">
-
-							<Select id="searchbtn" isMulti name="colors" options={options}
-								className="basic-multi-select" classNamePrefix="select" styles={customStyles} />
-						</div>
-						<div class="col-md-2 col-sm-2">
-							<button type="submit" class="btn btn-primary full-width">Filter</button>
-						</div>
-					</form>
+	return (
+		<div>
+			<section class="inner-header-title searchJob">
+				<div class="container">
+					<h1>Search Recipe</h1>
 				</div>
-			</div>
-
-			<RecipeResult data={Data} />
-
-
+			</section>
+			<div class="clearfix"></div>
+			<section class="browse-company">
+				<div class="container">
+					<div class="row extra-mrg">
+						<div class="wrap-search-filter">
+							<form>
+								<div class="col-md-10 col-sm-10">
+									<Select
+										id="searchbtn"
+										isMulti
+										name="colors"
+										options={ingredientsData}
+										className="basic-multi-select"
+										onChange={handleChange}
+										classNamePrefix="select"
+										styles={customStyles}
+									/>
+								</div>
+								<div class="col-md-2 col-sm-2">
+									<button
+										type="submit"
+										onClick={handleSubmit}
+										class="btn btn-primary full-width"
+									>
+										Search</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					{console.log(recipeData)}
+					<div className="row">
+						<div class="row extra-mrg">
+							{recipeData.length > 0 &&
+								recipeData.map((recipe) => {
+									return <RecipeResult key={recipe.id} data={recipe} />;
+								})}
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
-	</section>
-</div>
-);
-}
+	);
+};
 
-
-export default RecipeSearch
+export default RecipeSearch;
