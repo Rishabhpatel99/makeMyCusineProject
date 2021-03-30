@@ -19,3 +19,7 @@
 .searchJob{
     background-image:url('../src/assets/img/gallery1.jpg')
 }
+
+#searchbtn{
+    height: 50px;
+}

@@ -21,17 +21,17 @@ return(
                     
                     <div className="collapse navbar-collapse" id="navbar-menu">
                     <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">About Us</a></li>
                         <li><a href="index.html">Contact Us</a></li>
-                        <li><a href="index.html">Find Your Recipe</a></li>
+                        <li><a href="/search">Find Your Recipe</a></li>
 
  
                     </ul>
 
                     <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="login.html"><i className="fa fa-pencil" aria-hidden="true"></i>SignUp</a></li>
-							<li className="left-br"><a href="javascript:void(0)"  data-toggle="modal" data-target="#signup" className="signin">Sign In Now</a></li>
+							<li><a href="/login"><i className="fa fa-pencil" aria-hidden="true"></i>SignUp</a></li>
+							<li className="left-br"><a href="/register"  className="signin">Sign In Now</a></li>
 						</ul>
                     </div>
 

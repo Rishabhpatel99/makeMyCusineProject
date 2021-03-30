@@ -10,6 +10,7 @@ import TopRecipe  from './Components/Home/TopRecipe'
 import Data from './data.json'
 import Data1 from './data1.json'
 
+import Home from './Components/Home/Home'
 
 import RecipeSingle from './Components/Recipe/RecipeSingle'
 import RecipeSearch from './Components/Recipe/RecipeSearch'
@@ -37,6 +38,18 @@ function App() {
       <div className="Loader"></div>
       <Header />
 
+
+      <Switch>
+                <Route path="/" component={Home} exact />
+                <Route path="/search" component={RecipeSearch} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register}/>
+                
+      </Switch>
+
+
+
+
     {/* home page */}
     {/* <Slider /> */}
     {/* <Process /> */}
@@ -48,7 +61,7 @@ function App() {
 
 {/* <Login /> */}
 
-    <RecipeSearch />
+    {/* <RecipeSearch /> */}
 
     <Footer />
     </div>
