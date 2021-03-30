@@ -5,16 +5,6 @@ import { fetchRecipeData } from "../../api/index";
 
 import Select from "react-select";
 
-<<<<<<< HEAD
-const options = [
-{ value: 'chocolate', label: 'Chocolate' },
-{ value: 'strawberry', label: 'Strawberry' },
-{ value: 'vanilla', label: 'Vanilla' }
-]
-
-
-=======
->>>>>>> b7971a7aef9e5af7ba95e63bcdb191b01af58211
 const customStyles = {
 	control: (base) => ({
 		...base,
@@ -74,10 +64,6 @@ const RecipeSearch = () => {
 								</div>
 							</form>
 						</div>
-<<<<<<< HEAD
-						<div class="col-md-2 col-sm-2">
-							<button type="submit" class="btn btn-primary full-width">Search</button>
-=======
 					</div>
 					{console.log(recipeData)}
 					<div className="row">
@@ -86,7 +72,6 @@ const RecipeSearch = () => {
 								recipeData.map((recipe) => {
 									return <RecipeResult key={recipe.id} data={recipe} />;
 								})}
->>>>>>> b7971a7aef9e5af7ba95e63bcdb191b01af58211
 						</div>
 					</div>
 				</div>
