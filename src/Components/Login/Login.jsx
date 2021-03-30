@@ -1,7 +1,12 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import fire from '../../firebase/fire'
 
 
-const Login = ()=>{
+const Login = (props)=>{
+
+	const {email,setEmail,password,setPassword,handleLogin,handleSignup,hasAccount,setHasAccount,emailError,passwordError} = props;
+
+
     return(
         <div>
 	<section class="inner-header-title loginImg" >
@@ -22,23 +27,31 @@ const Login = ()=>{
 							<div class="form-group">
 								<label>Email</label>
 								<div class="input-with-icon">
-									<input type="email" class="form-control" placeholder="Enter Your Email" />
+									<input type="email" class="form-control" placeholder="Enter Your Email" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} />
 									<i class="theme-cl ti-email"></i>
+									<p style={{"color":"red"}}>{emailError}</p>
 								</div>
 							</div>
 							
 							<div class="form-group">
 								<label>Password</label>
 								<div class="input-with-icon">
-									<input type="password" class="form-control" placeholder="Enter Your Password" />
+									<input type="password" class="form-control" placeholder="Enter Your Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
 									<i class="theme-cl ti-lock"></i>
+									<p style={{"color":"red"}}>{passwordError}</p>
 								</div>
 							</div>
 							
 						
 							
 							<div class="form-groups">
-								<button type="submit" class="btn btn-primary theme-bg full-width">Login</button>
+								{hasAccount ? (
+									<button type="submit" class="btn btn-primary theme-bg full-width" onClick={handleLogin}>Login</button>
+									
+								) : (
+									<button type="submit" class="btn btn-primary theme-bg full-width" onClick={handleLogin}>Login</button>
+								)}
+							{/* <button type="submit" class="btn btn-primary theme-bg full-width">Login</button> */}
 							</div>
 							
 						

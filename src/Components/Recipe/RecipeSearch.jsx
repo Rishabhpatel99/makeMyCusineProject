@@ -13,6 +13,8 @@ const options = [
 { value: 'strawberry', label: 'Strawberry' },
 { value: 'vanilla', label: 'Vanilla' }
 ]
+
+
 const customStyles = {
 control: base => ({
 ...base,
@@ -45,7 +47,7 @@ return(
 								className="basic-multi-select" classNamePrefix="select" styles={customStyles} />
 						</div>
 						<div class="col-md-2 col-sm-2">
-							<button type="submit" class="btn btn-primary full-width">Filter</button>
+							<button type="submit" class="btn btn-primary full-width">Search</button>
 						</div>
 					</form>
 				</div>
