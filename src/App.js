@@ -29,12 +29,23 @@ import fire from './firebase/fire'
 function App() {
 
 
+<<<<<<< HEAD
 const [user,setUser] = useState("");
 const [email,setEmail] = useState("");
 const [password,setPassword] = useState("");
 const [emailError,setEmailError] = useState("");
 const [passwordError,setPasswordError] = useState("");
 const [hasAccount,setHasAccount] = useState(false);
+=======
+      <Switch>
+                <Route path="/" component={Home} exact />
+                <Route path="/search" component={RecipeSearch} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register}/>
+                <Route path="/recipe" render={(props) => <RecipeSingle {...props}/>}/>
+                
+      </Switch>
+>>>>>>> b7971a7aef9e5af7ba95e63bcdb191b01af58211
 
 const clearInput = ()=>{
 setEmail("");
