@@ -44,6 +44,7 @@ function App() {
                 <Route path="/search" component={RecipeSearch} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register}/>
+                <Route path="/recipe" render={(props) => <RecipeSingle {...props}/>}/>
                 
       </Switch>
 
