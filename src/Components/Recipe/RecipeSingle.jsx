@@ -1,9 +1,29 @@
 import React, { useEffect, useState } from "react";
 import Ingredient from "./Ingredient";
 import { fetchRecipeDataByid } from "../../api/index";
+import { saveRecipe, getSavedRecipesById } from "../../api/saveRecipe"
 
 function RecipeSingle(props) {
 	const [recipeData, setRecipeData] = useState({});
+	const [isRecipeSaved, setIsRecipeSaved] = useState(false);
+
+	useEffect(()=>{
+		if(localStorage.getItem('savedRecipeData')){
+			const savedRecipedata = localStorage.getItem('savedRecipeData');
+			if(savedRecipedata.includes(props.location.state.id)){
+				setIsRecipeSaved(true)
+			}
+		}
+	},[props.location.state.id])
+
+	useEffect(() => {
+		const getData = async (id) => {
+			const savedData = await getSavedRecipesById(id);
+			localStorage.setItem('savedRecipeData', savedData)
+		}
+		getData(localStorage.getItem("userId"));
+	}, [])
+
 	useEffect(() => {
 		//get single recipe data
 		const fetchSingleRecipeData = async (recipeId) => {
@@ -16,15 +36,29 @@ function RecipeSingle(props) {
 
 		return function cleanup() {
 			setRecipeData({})
-		  };
+		};
 
 	}, []);
+
 	const checkSign = (sts) => {
 		let checkSign = sts
 			? "fa fa-check usedIngredient"
 			: "fa fa-times missedIngredient";
 		return <i className={checkSign}></i>;
 	};
+
+
+	const saveRecipeforUser = async () => {
+		if (localStorage.getItem("userId")) {
+			setIsRecipeSaved(saveRecipe(recipeData, localStorage.getItem("userId")));
+		}
+	}
+
+	// if (save === true && localStorage.getItem("userId")) {
+	// 	setIsRecipeSaved(saveRecipe(recipeData , localStorage.getItem("userId")))
+	// 	setSave(false)
+	// }
+
 
 	return (
 		<div>
@@ -107,11 +141,11 @@ function RecipeSingle(props) {
 										<br />
 										{recipeData.extendedIngredients && recipeData.extendedIngredients.map((item, index) => {
 											return <Ingredient data={item} index={index} />;
-											// console.log(item);
 										})}
 									</div>
-									<a href="job-detail-1.html#" className="btn btn-success">
-										Save This Recipe</a>
+									<button onClick={saveRecipeforUser} className="btn btn-primary">
+										{isRecipeSaved ? 'Saved' : 'Save This Recipe'}</button>
+
 								</div>
 							</div>
 						</div>
