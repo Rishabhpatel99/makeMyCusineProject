@@ -30,8 +30,8 @@ return(
                     </ul>
 
                     <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="/login"><i className="fa fa-pencil" aria-hidden="true"></i>SignUp</a></li>
-							<li className="left-br"><a href="/register"  className="signin">Sign In Now</a></li>
+							<li><a href="/login"><i className="fa fa-pencil" aria-hidden="true"></i>Sign In </a></li>
+							<li className="left-br"><a href="/register"  className="signin">Sign Up Now</a></li>
 						</ul>
                     </div>
 

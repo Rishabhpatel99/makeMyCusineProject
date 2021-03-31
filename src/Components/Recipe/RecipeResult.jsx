@@ -17,11 +17,11 @@ const RecipeResult = ({ data }) => {
         <div>
             <div class="col-md-4 col-sm-6">
                 <div class="grid-view brows-job-list">
-                    <div onClick={() => setseeSingleRecipe(true)} class="card-img-top">
+                    <div style={{cursor: "pointer"}} onClick={() => setseeSingleRecipe(true)} class="card-img-top">
                         <img src={data.image} class="img-responsive" alt="" />
                     </div>
                     <div class="brows-job-position">
-                        <h3 onClick={() => setseeSingleRecipe(true)}>{data.title}</h3>
+                        <h3 style={{cursor: "pointer"}} onClick={() => setseeSingleRecipe(true)}>{data.title}</h3>
                     </div>
                     <div class="job-position">
                         <span class="job-num"><i class="fa fa-heart"></i> {data.likes}</span>

@@ -168,7 +168,7 @@ return (
 
 
 {console.log(user)}
-<p>user login</p>
+{/* <p>user login</p> */}
 
  {/* <Login 
   email={email} 

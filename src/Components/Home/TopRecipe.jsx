@@ -1,6 +1,19 @@
-import React from "react";
+import React , {useState} from "react";
+import { Redirect } from 'react-router'
 
 function TopRecipe(props) {
+
+
+    const [seeSingleRecipe, setseeSingleRecipe] = useState(false);
+
+
+    if (seeSingleRecipe === true) {
+        return <Redirect to={{
+            pathname: '/recipe',
+            state: { id: props.data[0].id }
+        }} />
+    }
+
     return (
         <section>
             <div className="container">
@@ -18,7 +31,7 @@ function TopRecipe(props) {
                     <div class="row extra-mrg">
                         <div class="col-md-4 col-sm-6">
                             <div class="grid-view brows-job-list">
-                                <div class="card-img-top">
+                                <div style={{cursor: "pointer"}} onClick={() => setseeSingleRecipe(true)} class="card-img-top">
                                     <img
                                         src={props.data[0].image}
                                         class="img-responsive"
@@ -26,8 +39,8 @@ function TopRecipe(props) {
                                     />
                                 </div>
                                 <div class="brows-job-position">
-                                    <h3>
-                                        <a href="job-detail.html">{props.data[0].title}</a>
+                                    <h3 style={{cursor: "pointer"}} onClick={() => setseeSingleRecipe(true)}>
+                                        {props.data[0].title}
                                     </h3>
                                 </div>
                                 <div class="job-position">
