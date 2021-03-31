@@ -19,7 +19,7 @@ import Discover from './Components/Discover/Discover'
 import Ingredients from './Components/Ingredients/Ingredients'
 import Login from './Components/Login/Login'
 import Register from './Components/Register/Register'
-import {Route, Switch } from "react-router-dom"
+import {Route, Switch, useHistory } from "react-router-dom"
 
 
 import React,{useState,useEffect} from "react";
@@ -35,7 +35,8 @@ const [password,setPassword] = useState("");
 const [emailError,setEmailError] = useState("");
 const [passwordError,setPasswordError] = useState("");
 const [hasAccount,setHasAccount] = useState(false);
-     
+const history  = useHistory();
+
 
 const clearInput = ()=>{
 setEmail("");
@@ -49,21 +50,24 @@ setPasswordError("");
 
 
 const handleLogin = ()=>{
-fire
-.auth()
-.signInWithEmailAndPassword(email,password)
-.catch((err)=>{
-switch(err.code){
-case "auth/invalid-email":
-case "auth/user-disabled":
-case "auth/user-not-found":
-setEmailError(err.message);
-break;
-case "auth/wrong-password":
-setPasswordError(err.message);
-break;
-}
-});
+  fire
+  .auth()
+  .signInWithEmailAndPassword(email,password)
+  .catch((err)=>{
+    switch(err.code){
+      case "auth/invalid-email":
+      case "auth/user-disabled":
+      case "auth/user-not-found":
+        setEmailError(err.message);
+        break;
+      case "auth/wrong-password":
+        setPasswordError(err.message);
+        break;
+
+     
+  }
+  
+  });
 }
 
 
@@ -95,6 +99,7 @@ fire.auth().onAuthStateChanged((user)=>{
 if(user){
 clearInput();
 setUser(user);
+history.push("/");
 }else{
 setUser("");
 }
@@ -139,20 +144,33 @@ return (
   {/*
   <RecipeSingle data={Data1} /> */}
 
-{user ? (
-  <div>
+<div>
  <Switch>
                 <Route path="/" component={Home} exact />
                 <Route path="/search" component={RecipeSearch} />
-                <Route path="/login" component={Login} />
+                {/* <Route path="/login" component={Login} /> */}
+                <Route path="/login" render={(props) => <Login 
+                  email={email} 
+                  setEmail={setEmail} 
+                  password={password} 
+                  setPassword={setPassword} 
+                  handleLogin={handleLogin}
+                  handleSignup={handleSignup} 
+                  hasAccount={hasAccount} 
+                  setHasAccount={setHasAccount} 
+                  emailError={emailError}
+                  passwordError={passwordError} {...props}/>} />
                 <Route path="/register" component={Register}/>
                 <Route path="/recipe" render={(props) => <RecipeSingle {...props}/>}/>
                 
       </Switch>
  </div>
-  
-):(
-<Login 
+
+
+{console.log(user)}
+<p>user login</p>
+
+ {/* <Login 
   email={email} 
   setEmail={setEmail} 
   password={password} 
@@ -162,9 +180,7 @@ return (
   hasAccount={hasAccount} 
   setHasAccount={setHasAccount} 
   emailError={emailError}
-  passwordError={passwordError} />
-)}
-
+  passwordError={passwordError} /> */}
   
 
   {/*
