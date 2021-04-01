@@ -30,7 +30,7 @@ const RecipeSearch = () => {
 	};
 
 	return (
-		<div>
+		<div className="recipe-search">
 			<section class="inner-header-title searchJob">
 				<div class="container">
 					<h1>Search Recipe</h1>

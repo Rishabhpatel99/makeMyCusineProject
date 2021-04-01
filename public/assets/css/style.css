@@ -94,6 +94,11 @@ section.gray-bg {
 .freelance-box {
     padding: 5px;
 }
+
+.recipe-search{
+    margin-bottom: 50vh;
+}
+
 .inner-header-title.light-tx h2 {
     color: #fff;
 }
@@ -3423,7 +3428,7 @@ span.job-num {
     padding: 5px 10px;
     border-radius: 4px;
     text-transform: capitalize;
-    color: #8da2b3;
+    color: #52d388;
     background: #f3f6fb;
 }
 .brows-job-position p span {
