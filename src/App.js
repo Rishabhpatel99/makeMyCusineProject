@@ -99,7 +99,7 @@ fire.auth().onAuthStateChanged((user)=>{
 if(user){
 clearInput();
 setUser(user);
-history.push("/");
+// history.push("/");
 }else{
 setUser("");
 }
@@ -118,7 +118,7 @@ return (
 <div className="wrapper">
   <div className="Loader"></div>
   <Header />
-
+  <div style={{minHeight:"700px"}}>
   {/*
   <Switch>
     <Route path="/" component={Home} exact />
@@ -168,7 +168,7 @@ return (
 
 
 {console.log(user)}
-<p>user login</p>
+
 
  {/* <Login 
   email={email} 
@@ -185,7 +185,7 @@ return (
 
   {/*
   <RecipeSearch /> */}
-
+</div>
   <Footer />
 </div>
 );
