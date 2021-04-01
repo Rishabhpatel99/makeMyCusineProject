@@ -95,10 +95,12 @@ fire.auth().signOut();
 }
 
 const authListener = ()=>{
+
 fire.auth().onAuthStateChanged((user)=>{
 if(user){
 clearInput();
 setUser(user);
+localStorage.setItem("userId",user.uid);
 // history.push("/");
 }else{
 setUser("");

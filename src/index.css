@@ -1,7 +1,8 @@
 .logo-home{
-    height: 60px;
-    width: auto;
-    padding: 2px;
+    /* height: 100px; */
+    width: 100px !important;
+    /* width: auto; */
+    /* padding: 2px; */
 }
 
 .missedIngredient{

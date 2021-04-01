@@ -15,8 +15,9 @@ return(
 					
 					<div className="navbar-header">
 						<a className="navbar-brand" href="index.html">
-							<img src="assets/img/logommc.png" className="logo logo-scrolled logo-home" alt="" />
+							<img src="assets/img/mmcnewlogo.png" className="logo logo-scrolled logo-home" alt="" />
 						</a>
+                        
 					</div>
                     
                     <div className="collapse navbar-collapse" id="navbar-menu">
