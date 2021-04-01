@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Ingredient from "./Ingredient";
-import { fetchRecipeDataByid } from "../../api/index";
+import { fetchRecipeDataByid , getRecipeSteps } from "../../api/index";
 import { saveRecipe, getSavedRecipesById } from "../../api/saveRecipe"
 
 function RecipeSingle(props) {
 	const [recipeData, setRecipeData] = useState({});
+	const [recipeStepsData , setRecipeStepsData] = useState([]);
 	const [isRecipeSaved, setIsRecipeSaved] = useState(false);
 
 	useEffect(()=>{
@@ -28,8 +29,10 @@ function RecipeSingle(props) {
 		//get single recipe data
 		const fetchSingleRecipeData = async (recipeId) => {
 			const singleRecipeData = await fetchRecipeDataByid(recipeId);
-			if (singleRecipeData) {
+			const singleRecipeStepsData = await getRecipeSteps(recipeId);
+			if (singleRecipeData && singleRecipeStepsData) {
 				setRecipeData(singleRecipeData);
+				setRecipeStepsData(singleRecipeStepsData);
 			}
 		};
 		fetchSingleRecipeData(props.location.state.id);
@@ -143,6 +146,7 @@ function RecipeSingle(props) {
 											return <Ingredient data={item} index={index} />;
 										})}
 									</div>
+									{ recipeStepsData && console.log('dataaaasdsadsadasd isss sett',recipeStepsData)}
 									<button onClick={saveRecipeforUser} className="btn btn-primary">
 										{isRecipeSaved ? 'Saved' : 'Save This Recipe'}</button>
 
