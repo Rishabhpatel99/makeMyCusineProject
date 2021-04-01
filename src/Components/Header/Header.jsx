@@ -23,7 +23,7 @@ return(
                     <div className="collapse navbar-collapse" id="navbar-menu">
                     <ul className="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        {/* <li><a href="#">About Us</a></li> */}
                         <li><a href="index.html">Contact Us</a></li>
                         <li><a href="/search">Find Your Recipe</a></li>
 
@@ -32,7 +32,7 @@ return(
 
                     <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 							<li><a href="/login"><i className="fa fa-pencil" aria-hidden="true"></i>Sign In </a></li>
-							<li className="left-br"><a href="/register"  className="signin">Sign Up Now</a></li>
+							{/* <li className="left-br"><a href="/register"  className="signin">Sign Up Now</a></li> */}
 						</ul>
                     </div>
 

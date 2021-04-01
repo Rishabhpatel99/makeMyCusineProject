@@ -42,14 +42,19 @@ const Login = (props)=>{
 								</div>
 							</div>
 							
-						
+					
 							
 							<div class="form-groups">
 								{hasAccount ? (
+									<div>
 									<button type="submit" class="btn btn-primary theme-bg full-width" onClick={handleLogin}>Login</button>
-									
+									<br/><p>Not Registered yet? <span onClick={()=>setHasAccount(!hasAccount)}>Register</span></p>
+									</div>
 								) : (
-									<button type="submit" class="btn btn-primary theme-bg full-width" onClick={handleLogin}>Login</button>
+									<div>
+									<button type="submit" class="btn btn-primary theme-bg full-width" onClick={handleSignup}>Signup</button>
+									<br/><p>Already Registered ? <span onClick={()=>setHasAccount(!hasAccount)}>Login</span></p>
+									</div>
 								)}
 							{/* <button type="submit" class="btn btn-primary theme-bg full-width">Login</button> */}
 							</div>
