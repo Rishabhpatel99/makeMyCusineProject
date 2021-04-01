@@ -31,8 +31,17 @@ export const fetchRecipeDataByid = async (id) => {
     const getRecipeInfo = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=${API_KEY}`
     try {
         const  {data}  = await axios.get(getRecipeInfo);
-        console.log(data)
         return (data ? data : {})
+    }catch(error){
+        console.error(error);
+    }
+}
+
+export const getRecipeSteps = async (id) => {
+    const getRecipeStepsUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`
+    try {
+        const  {data}  = await axios.get(getRecipeStepsUrl);
+        return (data[0].steps ? data[0].steps : [])
     }catch(error){
         console.error(error);
     }

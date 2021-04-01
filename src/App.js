@@ -52,7 +52,12 @@ setPasswordError("");
 const handleLogin = ()=>{
   fire
   .auth()
-  .signInWithEmailAndPassword(email,password)
+  .signInWithEmailAndPassword(email,password).then(({user}) => {
+    if(user && user.uid){
+      localStorage.setItem('userId' , user.uid)
+        history.push('/search')
+    }
+  })
   .catch((err)=>{
     switch(err.code){
       case "auth/invalid-email":
@@ -63,8 +68,7 @@ const handleLogin = ()=>{
       case "auth/wrong-password":
         setPasswordError(err.message);
         break;
-
-     
+        default:
   }
   
   });
@@ -86,6 +90,7 @@ break;
 case "auth/weak -password":
 setPasswordError(err.message);
 break;
+default:
 }
 });
 }
